@@ -1,6 +1,5 @@
 all:
 	latexmk -xelatex -interaction=nonstopmode LIVRO.tex
-	evince LIVRO.pdf
 arquivos-gerais:
 	cp LIVRO.pdf ~/Dropbox/ARQUIVOS_GERAIS/DUMONT_VEREMOS_2_MIOLO.pdf
 erros:
