@@ -1,5 +1,9 @@
 all:
+	git log -1 --date=short --format=format:'\newcommand{\RevisionInfo}{%h}' > gitrevisioninfo.sty
 	latexmk -xelatex -interaction=nonstopmode LIVRO.tex
+erros:
+	-grep --color=auto "LaTeX Error" LIVRO.log
+	-grep --color=auto -A 3 "Undefined" LIVRO.log
 lua:
 	lualatex  LIVRO.tex
 	lualatex  LIVRO.tex
@@ -30,8 +34,10 @@ rubber-test:
 rubber-clean:
 	rubber --clean LIVRO.tex
 clean:
-	-rm *aux *log *tui *toc *.4ct *.4tc *.html *.css *.dvi *.epub *.lg *.ncx *.xref *.tmp *.idv *.opf *.png  LIVRO.pdf
-	-rm *.fdb_latexmk *.fls
+	-rm *aux *log *tui *toc *.4ct *.4tc *.html *.css *.dvi *.epub *.lg *.ncx *.xref *.tmp *.idv *.opf *.fls *_latexmk LIVRO.pdf
+	-rm -rf EBOOK-epub
+	-rm -rf EBOOK-epub3
+	-rm -rf EBOOK-mobi
 git:
 		git add .
 		git commit -m "direto na linha de comando"

@@ -23,6 +23,7 @@
 *.tmp 
 *.idv 
 *.opf
+gitrevisioninfo.sty
 img/
 originais/
 original/
