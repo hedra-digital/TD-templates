@@ -3,4 +3,3 @@
 \contentsline {part}{O homem que calculava}{7}
 \contentsline {chapter}{Segundo capítulo}{9}
 \contentsfinish 
-\contentsline {chapter}{Notas}{11}
