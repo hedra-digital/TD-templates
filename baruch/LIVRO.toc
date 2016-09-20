@@ -1,0 +1,3 @@
+\select@language {brazilian}
+\hyphenpenalty =10000\thispagestyle {empty}
+\contentsfinish 
