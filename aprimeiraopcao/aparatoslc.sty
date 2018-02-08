@@ -63,7 +63,7 @@
                   Lua\LaTeX, git \& ruby.\par
                   \begin{center}\normalsize\end{center}}
 
-\newcommand{\notasdefim}{\relax}
+\newcommand{\notasdefim}{}
 
 \newcommand{\publicidade}{\pagebreak\pagestyle{empty}\parindent0pt
 \include{PUBLICIDADE}}
@@ -83,52 +83,15 @@
 \vfill
 \clearpage
 %% Créditos ------------------------------------------------------
-\raggedright
-\linha{Copyright}{\copyrightlivro}
-\linha{Organização©}{\copyrightorganizacao}
-\linha{Introdução©}{\copyrightintroducao}
-\linha{Ilustração©}{\copyrightilustracao}
-\linha{Agradecimentos}{\agradecimentos}
-\linha{Indicação}{\indicacao}
-\linha{Edição}{\edicao}
-\linha{Coedição}{\coedicao}
-\linha{Assistência editorial}{\assistencia}
-\linha{Revisão}{\revisao}
-\linha{Preparação}{\preparacao}
-\linha{Capa}{\capa}
-\linha{Imagem da capa}{\imagemcapa}
-\linha{ISBN}{\ISBN}
-\ifdef{\diretor}{\listax{Direção}{\diretor}}{}
-\linha{Coordenação}{\coordenador}
-\bigskip
-\ifdef{\imagemficha}{\IfFileExists{\imagemficha}{\includegraphics[width=.7\textwidth]{\imagemficha}\par}}{}
-
-\begingroup\tiny
-\ifdef{\conselho}{\conselho}{\relax}
-\par\endgroup\bigskip
-
-\begingroup \tiny
-
-%\textit{Grafia atualizada segundo o Acordo Ortográfico da Língua\\
-%Portuguesa de 1990, em vigor no Brasil desde 2009.}\\
-
-
-\vfill
-%\textit{Direitos reservados em l\'ingua\\ portuguesa somente para o Brasil}\\\medskip
-
-%
-\ifdef{\instituicao{}}{\textsc{\instituicao}\par}{}
-\ifdef{\logradouro}{\logradouro}{}\ifdef{\numero}{,\,\numero\par}{}
-\ifdef{\cep}{\cep\ }{} \ifdef{\cidadeinstituicao}{\cidadeinstituicao\ }{} \ifdef{\estado\ }{\estado}{} \par\smallskip
-% Faltou Telefone, email, site, facebook, twitter, instagram
-\ifdef{\telefone}{\telefone\par}{}
-\ifdef{\site}{\site\par}{}
-\ifdef{\email}{\email\par}{}
-\ifdef{\facebook}{\facebook\par}{}
-\ifdef{\twitter}{\twitter\par}{}
-\ifdef{\instagram}{\instagram\par}{}
 \endgroup
+\footnotesize
+\parindent0pt
+\parskip3pt
+
+\IfFileExists{CREDITOS.tex}{\input{CREDITOS}}{}
+
 \pagebreak\raggedleft
+\begingroup
 %% Front ---------------------------------------------------------
 % Titulo
 \mbox{}\ifodd\thepage\relax\else\clearpage\fi
@@ -169,6 +132,7 @@
 
 % Finais -------------------------------------------------------
 \AtEndDocument{%
+\notasdefim
 \ifdef{\indice}{\indice}{\relax}
 \notasdefim
 \publicidade
